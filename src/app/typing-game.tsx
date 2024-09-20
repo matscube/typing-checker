@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import clsx from "clsx";
 import { motion } from "framer-motion";
+import { useCallback, useEffect, useState } from "react";
 
 const words = [
   "typescript",
@@ -82,7 +83,14 @@ export default function TypingGame() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div
+      className={clsx(
+        "w-full",
+        "p-20",
+        "flex flex-col items-center justify-center",
+        "bg-gray-100"
+      )}
+    >
       <motion.div
         animate={shake ? { x: [-5, 5, -5, 5, 0] } : {}}
         transition={{ duration: 0.3 }}
